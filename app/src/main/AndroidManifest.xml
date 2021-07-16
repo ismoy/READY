@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cl.tofcompany.ready">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/grupo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/grupo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        tools:ignore="ExtraText">
+        <activity android:name=".Controllers.FeedbackActivity"
+            android:parentActivityName=".Controllers.HomeActivity">
+
+        </activity>
+
+
+        <activity
+            android:name=".Controllers.ProfileActivity"
+            android:parentActivityName=".Controllers.HomeActivity" />
+        <activity android:name=".Controllers.MainActivity" />
+        <activity android:name=".Controllers.HomeActivity" />
+        <activity android:name=".Controllers.ForgotPassword"
+            android:parentActivityName=".Controllers.MainActivity"/>
+        <activity android:name=".Controllers.Register"
+            android:parentActivityName=".Controllers.MainActivity"/>
+        <activity android:name=".Controllers.Splash_Screen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme"
+                    tools:ignore="ManifestResource" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
